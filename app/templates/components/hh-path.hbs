@@ -1,0 +1,19 @@
+<img src="{{image}}" height="50" width="50" alt="">
+
+<hr>
+    name: {{path.name}}  <br>
+    length: {{path.length}}km  <br>
+    time: {{path.time}}h  <br>
+    info: {{path.info}}  <br>
+<hr>
+
+<h2>map</h2>
+{{#leaflet-map lat=63.825428956712742 lng=20.265859365463257 zoom=15 as |layers|}}
+  {{layers.tile url="http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png"}}
+
+  {{#each path.places as |place|}}
+    {{layers.marker location=place.position onClick=(action "goToPlace" place.id)}}
+  {{/each}}
+
+  {{layers.polyline locations=path.polyline weight=5 color=color onClick=(action "goToPath")}}
+{{/leaflet-map}}

@@ -56,7 +56,7 @@ export default RESTSerializer.extend(EmbeddedRecordsMixin, {
 
       path.places.forEach((place, placeIndex) => {
         let placeId = placeIndex + 1;
-        place['id'] = `${pathIndex}${placeId}`;
+        place['id'] = `${pathId}${placeId}`;
         this.removeAttributePrefix('place', place);
       });
     });
