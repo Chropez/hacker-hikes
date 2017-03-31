@@ -12,8 +12,18 @@
   {{layers.tile url="http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png"}}
 
   {{#each path.places as |place|}}
-    {{layers.marker location=place.position onClick=(action "goToPlace" place.id)}}
+    {{#layers.marker location=place.position}}
+      {{#popup-layer}}
+        <h4>{{place.name}}</h4>
+        <div {{action "goToPlace" place.id}}>more info...</div>
+      {{/popup-layer}}
+    {{/layers.marker}}
   {{/each}}
 
-  {{layers.polyline locations=path.polyline weight=5 color=color onClick=(action "goToPath")}}
+  {{#layers.polyline locations=path.polyline weight=5 color=color}}
+      {{#popup-layer}}
+        <h4>{{path.name}}</h4>
+        <div {{action "goToPath"}}>more info...</div>
+      {{/popup-layer}}
+  {{/layers.polyline}}
 {{/leaflet-map}}
