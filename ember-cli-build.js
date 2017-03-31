@@ -3,6 +3,7 @@ const EmberApp = require('ember-cli/lib/broccoli/ember-app');
 
 module.exports = function(defaults) {
   var app = new EmberApp(defaults, {
+    // needed for leaflet
     fingerprint: {
       exclude: [
         'images/layers-2x.png',
@@ -11,6 +12,13 @@ module.exports = function(defaults) {
         'images/marker-icon.png',
         'images/marker-shadow.png'
       ]
+    },
+
+    // cache api
+    'esw-cache-fallback': {
+      patterns: [
+        'https://forward-byte-711.appspot.com/read/Test/Production/sv'
+      ],
     }
   });
 
