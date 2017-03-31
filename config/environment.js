@@ -26,7 +26,7 @@ module.exports = function(environment) {
       'img-src': "'self' data: http://*",
       'media-src': "'self'",
       'child-src': "'self' https://buttons.github.io"
-    }
+    },
 
     APP: {
       // Here you can pass flags/options to your application instance
