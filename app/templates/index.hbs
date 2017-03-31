@@ -1,0 +1,38 @@
+<h1>This is index</h1>
+
+{{#each model as |path|}}
+  {{#unless path.isEmpty}}
+    {{#link-to "path" path}}
+      <img src="{{path.image}}" width="200" height="200" alt="{{path.name}}">
+      <div>{{path.name}}</div>
+    {{/link-to}}
+  {{/unless}}
+{{/each}}
+
+{{outlet}}
+
+
+
+  {{!--<ul>
+    <li>id: {{path.id}}</li>
+    <li>name: {{path.name}}</li>
+    <li>length: {{path.length}}km</li>
+    <li>time: {{path.time}}h</li>
+    <li>image: {{path.image}}</li>
+    <li>info: {{path.info}}</li>
+    <li>polylines: {{path.polyline.length}}</li>
+    <li>
+      <ul>
+        {{#each path.places as |place|}}
+          <li>id: {{place.id}}</li>
+          <li>name: {{place.name}}</li>
+          <li>image: {{place.image}}</li>
+          <li>radius: {{place.radius}}</li>
+          <li>info: {{place.info}}</li>
+          <li>position: {{place.position.length}}</li>
+          <li>media: {{place.media.length}}</li>
+        {{/each}}
+      </ul>
+    </li>
+  </ul>--}}
+
