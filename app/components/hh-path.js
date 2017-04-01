@@ -1,6 +1,7 @@
 import Ember from 'ember';
 
 const {
+  A,
   Component,
   computed: { or },
   inject: { service }
@@ -9,9 +10,22 @@ const {
 export default Component.extend({
   defaultImage: '/img/default-image.jpg',
   image: or('path.image', 'defaultImage'),
-  marker1: [63.825428956712742, 20.265859365463257],
   router: service('-routing'),
   color: '#cc2d2d',
+  allBounds: null,
+
+  didReceiveAttrs() {
+    let polyline = this.get('path.polyline');
+    let placesPositions = this.get('path.places').map((place) => {
+      return place.get('position');
+    });
+
+    let allBounds = A().pushObjects(polyline);
+    allBounds.pushObjects(placesPositions);
+    allBounds.removeObject(null);
+    this.set('allBounds', allBounds);
+    this._super(...arguments);
+  },
 
   actions: {
     goToPlace(placeId) {

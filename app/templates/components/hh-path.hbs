@@ -8,7 +8,7 @@
 <hr>
 
 <h2>map</h2>
-{{#leaflet-map lat=63.825428956712742 lng=20.265859365463257 zoom=15 as |layers|}}
+{{#leaflet-map bounds=path.polyline as |layers|}}
   {{layers.tile url="http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png"}}
 
   {{#each path.places as |place|}}
