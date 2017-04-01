@@ -6,6 +6,6 @@ const {
 } = Ember;
 
 export default Component.extend({
-  defaultImage: '/img/default-image.jpg',
+  defaultImage: '/images/default-image.jpg',
   image: or('place.image', 'defaultImage')
 });

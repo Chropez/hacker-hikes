@@ -8,7 +8,7 @@ const {
 } = Ember;
 
 export default Component.extend({
-  defaultImage: '/img/default-image.jpg',
+  defaultImage: '/images/default-image.jpg',
   image: or('path.image', 'defaultImage'),
   router: service('-routing'),
   color: '#cc2d2d',

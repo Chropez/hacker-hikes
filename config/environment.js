@@ -18,12 +18,12 @@ module.exports = function(environment) {
     },
 
     contentSecurityPolicy: {
-      'default-src': "'none'",
+      'default-src': "'none' https://forward-byte-711.appspot.com",
       'script-src': "'self' 'unsafe-inline' 'unsafe-eval' https://buttons.github.io https://api.github.com",
       'font-src': "'self' https://fonts.gstatic.com",
       'style-src': "'self' 'unsafe-inline' https://buttons.github.io https://fonts.googleapis.com",
-      'connect-src': "'self'",
-      'img-src': "'self' data: http://*",
+      'connect-src': "'self' https://forward-byte-711.appspot.com",
+      'img-src': "'self' data:",
       'media-src': "'self'",
       'child-src': "'self' https://buttons.github.io"
     },
@@ -54,7 +54,7 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-
+    // do nothing
   }
 
   return ENV;

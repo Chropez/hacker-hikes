@@ -14,11 +14,25 @@ module.exports = function(defaults) {
       ]
     },
 
-    // cache api
+    // caches external hosts
     'esw-cache-fallback': {
       patterns: [
-        'https://forward-byte-711.appspot.com/read/Test/Production/sv'
+        'https://forward-byte-711.appspot.com/read/Test/Development/sv(.*)',
+        'http://upload.wikimedia.org/(.+)',
+        'http://www8.tfe.umu.se/(.+)',
+        'https://fbcdn-sphotos-c-a.akamaihd.net/(.+)',
+        'http://static.auspost.com.au/(.+)',
+        'http://b.basemaps.cartocdn.com/(.+)'
       ],
+      version: '1'
+    },
+
+    // cache assets
+    'asset-cache': {
+      include: [
+        'assets/**/*',
+        'images/**/*'
+      ]
     }
   });
 
