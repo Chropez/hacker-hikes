@@ -1,38 +1,25 @@
-<h3>List of trails</h3>
+{{#site-container}}
+  {{hh-toolbar tall=true showLogo=true}}
 
-{{#each model as |path|}}
-  {{#unless path.isEmpty}}
-    {{#link-to "path" path}}
-      <img src="{{path.image}}" width="200" height="200" alt="{{path.name}}">
-      <div>{{path.name}}</div>
-    {{/link-to}}
-  {{/unless}}
-{{/each}}
+  {{#paper-content scroll-y=true class="flex"}}
+    <h2 class="page-title">List of trails</h2>
 
-{{outlet}}
+    <div class="layout-row flex layout-wrap">
+      {{#each model as |path|}}
+
+        {{!-- Dont show paths that are empty --}}
+        {{#unless path.isEmpty}}
+
+          {{#hh-card as |card|}}
+            {{#link-to "path" path class="flex-xs-100 flex-sm-33 flex-md-25 flex-xl-20 flex-20"}}
+              {{card.path path=path}}
+            {{/link-to}}
+          {{/hh-card}}
+
+        {{/unless}}
+      {{/each}}
+    </div>
 
 
-
-  {{!--<ul>
-    <li>id: {{path.id}}</li>
-    <li>name: {{path.name}}</li>
-    <li>length: {{path.length}}km</li>
-    <li>time: {{path.time}}h</li>
-    <li>image: {{path.image}}</li>
-    <li>info: {{path.info}}</li>
-    <li>polylines: {{path.polyline.length}}</li>
-    <li>
-      <ul>
-        {{#each path.places as |place|}}
-          <li>id: {{place.id}}</li>
-          <li>name: {{place.name}}</li>
-          <li>image: {{place.image}}</li>
-          <li>radius: {{place.radius}}</li>
-          <li>info: {{place.info}}</li>
-          <li>position: {{place.position.length}}</li>
-          <li>media: {{place.media.length}}</li>
-        {{/each}}
-      </ul>
-    </li>
-  </ul>--}}
-
+  {{/paper-content}}
+{{/site-container}}

@@ -18,11 +18,15 @@ module.exports = function(defaults) {
     'esw-cache-fallback': {
       patterns: [
         'https://forward-byte-711.appspot.com/read/Test/Development/sv(.*)',
-        'http://upload.wikimedia.org/(.+)',
-        'http://www8.tfe.umu.se/(.+)',
+        '[http|https]://upload.wikimedia.org/(.+)',
+        '[http|https]://www8.tfe.umu.se/(.+)',
         'https://fbcdn-sphotos-c-a.akamaihd.net/(.+)',
-        'http://static.auspost.com.au/(.+)',
-        'http://b.basemaps.cartocdn.com/(.+)'
+        '[http|https]://static.auspost.com.au/(.+)',
+        '[http|https]://b.basemaps.cartocdn.com/(.+)',
+        'https://buttons.github.io/(.+)',
+        'https://api.github.com/(.+)',
+        'https://fonts.gstatic.com/(.+)',
+        'https://fonts.googleapis.com/(.+)'
       ],
       version: '1'
     },

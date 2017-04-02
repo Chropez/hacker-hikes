@@ -1,0 +1,12 @@
+{{#paper-card class="md-whiteframe-2dp" as |card|}}
+  <div class="md-card-image" style="{{imageStyle}}"></div>
+  {{!--{{card.image src=path.image alt=path.name title=path.name}}--}}
+
+  {{#card.title as |title|}}
+    {{#title.text as |text|}}
+      {{#text.headline}}{{path.name}}{{/text.headline}}
+      {{#text.subhead}}{{path.info}}{{/text.subhead}}
+    {{/title.text}}
+  {{/card.title}}
+
+{{/paper-card}}

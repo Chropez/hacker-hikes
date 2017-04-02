@@ -1,1 +1,10 @@
+// main styles
+@import "color-palette";
+@import 'variables';
 @import 'ember-paper';
+
+// components
+@import "pod-styles";
+
+// routes
+@import 'application';

@@ -57,5 +57,9 @@ module.exports = function(environment) {
     // do nothing
   }
 
+  ENV['ember-component-css'] = {
+    classicStyleDir: 'components'
+  }
+
   return ENV;
 };
