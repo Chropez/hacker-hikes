@@ -1,7 +1,36 @@
 # hacker-hikes
 
-This README outlines the details of collaborating on this Ember application.
-A short introduction of this app could easily go here.
+Hacker-hikes is a single page app made with the framework Emberjs. 
+The purpose of hacker-hikes is to expose hiking and trails data coming from a web API.
+
+
+[Demo](https://hacker-hikes.herokuapp.com/)
+
+## Motivation
+Ember is a great javascript framework for rapidly building ambitious web apps.
+Ember uses babel that allows you to write ES6 in your apps!
+
+The web app is automatically deployed to Heroku everytime master is pushed.
+
+The user interface uses material design to give the user a great user experience.
+
+Besides that, hacker-hikes is a progressive web app. 
+The web app scores 88 of 100 in the [lighthouse chrome extension](https://chrome.google.com/webstore/detail/lighthouse/blipmdconlkpinefehnmjammfjpmpbjk) that audits different aspects of progressive web apps.
+
+Some of the progressive web are features added are
+* Can be added to the homescreen in a phone and be used stand alone (more like an app)
+* Progressively enhanced - fast first render performance done server rendered
+* Offline support with service workers
+* Responsive design
+
+## Dependencies
+
+* Ember-CLI - Command line interface for development and building the web app
+* Ember-Data - data persistence layer used with custom serializer/adapter to connect to the API
+* Ember-Paper - material design ember/css addon
+* Ember-Leaflet - Map-addon. Uses the library Leaflet.
+* Ember-Fastboot - used to render the app on the server for progressive enhancement.
+* Sass - for better styling
 
 ## Prerequisites
 
