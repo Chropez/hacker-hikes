@@ -1,6 +1,8 @@
 /* eslint-env node */
 const EmberApp = require('ember-cli/lib/broccoli/ember-app');
 
+var version = 2;
+
 module.exports = function(defaults) {
   var app = new EmberApp(defaults, {
     // needed for leaflet
@@ -39,7 +41,7 @@ module.exports = function(defaults) {
         'https://static.auspost.com.au/(.+)',
         'http://static.auspost.com.au/(.+)'
       ],
-      version: '1'
+      version: version
     },
 
     // cache assets
@@ -48,7 +50,7 @@ module.exports = function(defaults) {
         'assets/**/*',
         'images/**/*'
       ],
-      version: '1'
+      version: version
     }
   });
 

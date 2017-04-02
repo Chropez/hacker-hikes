@@ -5,11 +5,6 @@ body, md-content.md-default-theme{
   font-size: 14px;
 }
 
-.page-title {
-  margin: 15px 11px 0;
-  font-size: 15px;
-  color: color($color-grey, '700');
-}
 
 body > .ember-view {
   flex-direction: row;
@@ -44,6 +39,13 @@ body, html {
 a {
   text-decoration: none;
 }
+
+.page-title {
+  margin: 15px 11px 0;
+  font-size: 15px;
+  color: color($color-grey, '700');
+}
+
 
 .primary-color-light {
   color: color($primary, '50')
@@ -93,4 +95,9 @@ a {
     margin-bottom: 0;
     font-weight: bold;
   }
+}
+
+.md-subhead {
+  line-height: 16px;
+  margin-top: 2px;
 }
