@@ -1,0 +1,25 @@
+{{#leaflet-map bounds=allBounds as |layers|}}
+  {{layers.tile url="http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png"}}
+
+  {{#each path.places as |place|}}
+    {{#layers.marker location=place.position}}
+      {{#popup-layer}}
+        <h3>{{place.name}}</h3>
+
+        {{#link-to "path.place" path place}}
+          Show more info...
+        {{/link-to}}
+      {{/popup-layer}}
+    {{/layers.marker}}
+  {{/each}}
+
+  {{#layers.polyline locations=path.polyline weight=5 color=polylineColor}}
+      {{#popup-layer}}
+        <h4>{{path.name}}</h4>
+
+        {{#link-to "path.index" path}}
+          Show more info...
+        {{/link-to}}
+      {{/popup-layer}}
+  {{/layers.polyline}}
+{{/leaflet-map}}

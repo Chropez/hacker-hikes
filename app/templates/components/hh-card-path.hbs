@@ -1,6 +1,5 @@
 {{#paper-card class="md-whiteframe-2dp" as |card|}}
-  <div class="md-card-image" style="{{imageStyle}}"></div>
-  {{!--{{card.image src=path.image alt=path.name title=path.name}}--}}
+  <div class="md-card-image md-card-bg-image" style="{{safestring-bgimage path.image}}"></div>
 
   {{#card.title as |title|}}
     {{#title.text as |text|}}
@@ -8,5 +7,4 @@
       {{#text.subhead}}{{path.info}}{{/text.subhead}}
     {{/title.text}}
   {{/card.title}}
-
 {{/paper-card}}

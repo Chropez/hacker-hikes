@@ -1,10 +1,11 @@
-<br>
-<h4>Place - {{place.name}}</h4>
+{{#paper-card class="md-whiteframe-2dp" as |card|}}
+  {{#card.header as |header|}}
+    {{#header.text as |text|}}
+      {{#text.title class="primary-color"}}{{place.name}}{{/text.title}}
+      {{#text.subhead}}{{place.info}}{{/text.subhead}}
+    {{/header.text}}
+  {{/card.header}}
 
-<img src="{{image}}" height="200" width="200" alt="">
+  <div class="md-card-image md-card-bg-image" style="{{safestring-bgimage place.image}}"></div>
+{{/paper-card}}
 
-<br>
-radius: {{place.radius}}  <br>
-info: {{place.info}}  <br>
-position: {{place.position.length}}  <br>
-media: {{place.media.length}}  <br>

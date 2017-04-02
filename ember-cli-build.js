@@ -18,15 +18,26 @@ module.exports = function(defaults) {
     'esw-cache-fallback': {
       patterns: [
         'https://forward-byte-711.appspot.com/read/Test/Development/sv(.*)',
-        '[http|https]://upload.wikimedia.org/(.+)',
-        '[http|https]://www8.tfe.umu.se/(.+)',
-        'https://fbcdn-sphotos-c-a.akamaihd.net/(.+)',
-        '[http|https]://static.auspost.com.au/(.+)',
-        '[http|https]://b.basemaps.cartocdn.com/(.+)',
+
+        // Maps
+        'http://b.basemaps.cartocdn.com/(.+)',
+        'https://b.basemaps.cartocdn.com/(.+)',
+
+        // Ember paper
         'https://buttons.github.io/(.+)',
         'https://api.github.com/(.+)',
         'https://fonts.gstatic.com/(.+)',
-        'https://fonts.googleapis.com/(.+)'
+        'https://fonts.googleapis.com/(.+)',
+
+        // custom images
+        'https://upload.wikimedia.org/(.+)',
+        'http://upload.wikimedia.org/(.+)',
+        'http://www8.tfe.umu.se/(.+)',
+        'https://www8.tfe.umu.se/(.+)',
+        'https://fbcdn-sphotos-c-a.akamaihd.net/(.+)',
+        'http://fbcdn-sphotos-c-a.akamaihd.net/(.+)',
+        'https://static.auspost.com.au/(.+)',
+        'http://static.auspost.com.au/(.+)'
       ],
       version: '1'
     },
@@ -36,7 +47,8 @@ module.exports = function(defaults) {
       include: [
         'assets/**/*',
         'images/**/*'
-      ]
+      ],
+      version: '1'
     }
   });
 

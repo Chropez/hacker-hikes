@@ -1,7 +1,7 @@
 {{#site-container}}
   {{hh-toolbar tall=true showLogo=true}}
 
-  {{#paper-content scroll-y=true class="flex"}}
+  {{#hh-content}}
     <h2 class="page-title">List of trails</h2>
 
     <div class="layout-row flex layout-wrap">
@@ -10,16 +10,12 @@
         {{!-- Dont show paths that are empty --}}
         {{#unless path.isEmpty}}
 
-          {{#hh-card as |card|}}
-            {{#link-to "path" path class="flex-xs-100 flex-sm-33 flex-md-25 flex-xl-20 flex-20"}}
-              {{card.path path=path}}
-            {{/link-to}}
-          {{/hh-card}}
+          {{#link-to "path" path class="flex-xs-100 flex-sm-33 flex-md-25 flex-xl-20 flex-20"}}
+            {{hh-card-path path=path}}
+          {{/link-to}}
 
         {{/unless}}
       {{/each}}
     </div>
-
-
-  {{/paper-content}}
+  {{/hh-content}}
 {{/site-container}}

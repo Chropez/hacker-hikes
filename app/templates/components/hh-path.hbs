@@ -1,29 +1,31 @@
-<img src="{{image}}" height="50" width="50" alt="">
+{{#paper-card class="md-whiteframe-2dp" as |card|}}
+  {{#card.header as |header|}}
+    {{#header.text as |text|}}
+      {{#text.title class="primary-color"}}{{path.name}}{{/text.title}}
+      {{#text.subhead}}{{path.info}}{{/text.subhead}}
+    {{/header.text}}
+  {{/card.header}}
 
-<hr>
-    name: {{path.name}}  <br>
-    length: {{path.length}}km  <br>
-    time: {{path.time}}h  <br>
-    info: {{path.info}}  <br>
-<hr>
+  <div class="md-card-image md-card-bg-image" style="{{safestring-bgimage path.image}}"></div>
 
-<h2>map</h2>
-{{#leaflet-map bounds=path.polyline as |layers|}}
-  {{layers.tile url="http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png"}}
+  {{#card.content}}
+    <div class="layout-row layout-align-center-center">
+      <dl class="dl-horizontal">
+        <dt>Length</dt>
+        <dd>{{path.length}}km</dd>
 
-  {{#each path.places as |place|}}
-    {{#layers.marker location=place.position}}
-      {{#popup-layer}}
-        <h4>{{place.name}}</h4>
-        <div {{action "goToPlace" place.id}}>more info...</div>
-      {{/popup-layer}}
-    {{/layers.marker}}
-  {{/each}}
+        <dt>Time</dt>
+        <dd>{{path.time}}h</dd>
+      </dl>
+    </div>
 
-  {{#layers.polyline locations=path.polyline weight=5 color=color}}
-      {{#popup-layer}}
-        <h4>{{path.name}}</h4>
-        <div {{action "goToPath"}}>more info...</div>
-      {{/popup-layer}}
-  {{/layers.polyline}}
-{{/leaflet-map}}
+  {{!-- @todo show all places as a card for mobile
+  <h4>All places</h4>
+  {{#each model.places as |place|}}
+    {{place-list-item path=model place=place}}
+  {{/each}}--}}
+
+  {{/card.content}}
+{{/paper-card}}
+
+{{outlet}}

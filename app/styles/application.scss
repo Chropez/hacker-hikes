@@ -1,13 +1,8 @@
-body, md-content.main-content{
+body, md-content.md-default-theme{
   background-color: $base-background-color;
   color: $base-color;
   line-height: 20px;
   font-size: 14px;
-}
-
-.leaflet-container {
-  width: 100%;
-  height: 200px;
 }
 
 .page-title {
@@ -48,4 +43,54 @@ body, html {
 
 a {
   text-decoration: none;
+}
+
+.primary-color-light {
+  color: color($primary, '50')
+}
+
+.md-card-bg-image {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  box-sizing: border-box;
+  display: flex;
+  flex: 0 0 auto;
+  width: 100%;
+  height: 200px;
+}
+
+.height-100 {
+  height: 100%;
+}
+
+.path-sub-toolbar {
+  height: 50px;
+}
+
+.path-sub-toolbar__title {
+  text-align: center;
+  font-size: 18px;
+}
+
+.dl-horizontal {
+  display: inline-block;
+
+  dt {
+    float: left;
+    width: 70px;
+    overflow: hidden;
+    clear: left;
+    text-align: left;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: color($color-grey, '700');
+  }
+
+  dd {
+    margin-left: 70px;
+    margin-bottom: 0;
+    font-weight: bold;
+  }
 }

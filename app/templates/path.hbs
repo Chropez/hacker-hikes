@@ -1,9 +1,30 @@
+{{#site-container}}
+  {{hh-toolbar showLogo=true}}
+
+  {{#hh-content}}
+    {{#paper-card class="path-sub-toolbar layout-row layout-align-space-between-center" as |card|}}
+      {{#link-to "index" classNames='flex'}}
+        {{#paper-button iconButton=true}}
+          {{paper-icon "keyboard backspace" size=30}}
+        {{/paper-button}}
+      {{/link-to}}
+
+      <div class="path-sub-toolbar__title primary-color flex-70">{{model.name}}</div>
+      <div class="flex"></div>
+    {{/paper-card}}
 
 
-{{#link-to "application"}}
-  Back
-{{/link-to}}
+    <div class="layout-xs-column layout-row">
+      {{#paper-card class="flex-gt-xs-66 flex-xs-100 md-whiteframe-2dp" as |card|}}
+        {{#card.content class="height-100"}}
+          {{hh-path-map path=model}}
+        {{/card.content}}
+      {{/paper-card}}
 
-{{hh-path path=model}}
+      <div class="flex-gt-xs-33 flex-xs-100">
+        {{outlet}}
+      </div>
+    </div>
 
-{{outlet}}
+  {{/hh-content}}
+{{/site-container}}
