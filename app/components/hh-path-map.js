@@ -13,6 +13,9 @@ export default Component.extend({
   allBounds: null,
 
   didReceiveAttrs() {
+    // merges all the positions of the polyline with the places
+    // and puts it in the variable allBounds which is used to center
+    // the map
     let polyline = this.get('path.polyline');
     let placesPositions = this.get('path.places').map((place) => {
       return place.get('position');
