@@ -101,3 +101,10 @@ a {
   line-height: 16px;
   margin-top: 2px;
 }
+
+@media (max-width: 599px) {
+  .card-map__card {
+    // hack to fix on iPhone
+    display: block;
+  }
+}
