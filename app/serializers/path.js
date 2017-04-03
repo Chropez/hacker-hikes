@@ -71,7 +71,7 @@ export default RESTSerializer.extend(EmbeddedRecordsMixin, {
    */
   removeAttributePrefix (modelName, modelObject) {
     Object.keys(modelObject).forEach((attr) => {
-      if (!attr.startsWith(`${modelName}_`)) {
+      if (!this.startsWith(attr, `${modelName}_`)) {
         return;
       }
 
@@ -79,5 +79,9 @@ export default RESTSerializer.extend(EmbeddedRecordsMixin, {
       modelObject[newAttrName] = modelObject[attr];
       delete modelObject[attr];
     });
+  },
+
+  startsWith(text, startsWithText) {
+    return text.lastIndexOf(startsWithText, 0) === 0
   }
 });

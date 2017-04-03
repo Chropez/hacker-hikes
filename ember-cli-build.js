@@ -51,6 +51,14 @@ module.exports = function(defaults) {
         'images/**/*'
       ],
       version: version
+    },
+
+    // adds meta tag in prod to upgrade-insecure-requests
+    inlineContent: {
+      'head' : {
+        content: `<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">`,
+        enabled: process.env.EMBER_ENV === 'production'
+      }
     }
   });
 
