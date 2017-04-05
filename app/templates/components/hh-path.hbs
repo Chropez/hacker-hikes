@@ -1,4 +1,4 @@
-{{#paper-card class="md-whiteframe-2dp" as |card|}}
+{{#hh-paper-card dataCardId=path.id as |card|}}
   {{#card.header as |header|}}
     {{#header.text as |text|}}
       {{#text.title class="primary-color"}}{{path.name}}{{/text.title}}
@@ -6,7 +6,9 @@
     {{/header.text}}
   {{/card.header}}
 
-  <div class="md-card-image md-card-bg-image" style="{{safestring-bgimage path.image}}"></div>
+  <div data-path-image="{{path.id}}"
+      class="md-card-image md-card-bg-image"
+      style="{{safestring-bgimage path.image}}"></div>
 
   {{#card.content}}
     <div class="layout-row layout-align-center-center">
@@ -26,6 +28,6 @@
   {{/each}}--}}
 
   {{/card.content}}
-{{/paper-card}}
+{{/hh-paper-card}}
 
 {{outlet}}

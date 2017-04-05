@@ -12,6 +12,8 @@ $base-background-color: color($color-grey, '100');
 $base-color: #504f4f;
 $default-color: '100';
 
+$primary-font-color: darken(color($primary, '800'), 3);
+
 .primary-color {
-  color: darken(color($primary, '800'), 5);
+  color: $primary-font-color;
 }

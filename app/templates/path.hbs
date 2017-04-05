@@ -1,21 +1,26 @@
 {{#site-container}}
   {{#hh-toolbar}}
-    <div class="layout-row hide-gt-xs">
-      {{#link-to "index" classNames='flex layout-row layout-align-start-center'}}
-        {{#paper-button iconButton=true}}
-          {{paper-icon "keyboard backspace" }}
-        {{/paper-button}}
-      {{/link-to}}
-      <h2 class="path-sub-toolbar__title">{{model.name}}</h2>
-      <span class="flex"></span>
-    </div>
+    {{#if media.isMobile}}
 
-    <div class="hide-xs">
+      <div class="layout-row">
+        {{#link-to "index" classNames='flex layout-row layout-align-start-center'}}
+          {{#paper-button iconButton=true}}
+            {{paper-icon "keyboard backspace" }}
+          {{/paper-button}}
+        {{/link-to}}
+        <h2 class="path-sub-toolbar__title">{{model.name}}</h2>
+        <span class="flex"></span>
+      </div>
+
+    {{else}}
+
       <div class="layout-row layout-align-center-center flex">
-        <img src="/images/icons/android-chrome-192x192.png" alt="">
+        <img data-toolbar-logo="image" class="animated-content" src="/images/icons/android-chrome-192x192.png" alt="">
         <h2 class="logo">hacker-hikes</h2>
       </div>
-    </div>
+
+    {{/if}}
+
   {{/hh-toolbar}}
 
   {{#hh-content}}
@@ -39,7 +44,7 @@
       {{/paper-card}}
 
       <div class="flex-gt-xs-33 flex-xs-100">
-        {{outlet}}
+        {{liquid-outlet}}
       </div>
     </div>
 

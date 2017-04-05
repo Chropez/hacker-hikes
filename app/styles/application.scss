@@ -5,7 +5,6 @@ body, md-content.md-default-theme{
   font-size: 14px;
 }
 
-
 body > .ember-view {
   flex-direction: row;
   -ms-flex: 1;
@@ -36,14 +35,33 @@ body, html {
   -moz-osx-font-smoothing: grayscale;
 }
 
+body > .ember-view > .liquid-container > .liquid-child {
+  display: flex;
+}
+
+.liquid-container {
+  height: 100%;
+  width: 100%;
+}
+
+.liquid-child {
+  backface-visibility: hidden;
+  height: 100%;
+  width: 100%;
+}
+
+.liquid-container > .animated-content {
+  z-index: 10;
+}
+
 a {
   text-decoration: none;
 }
 
 .page-title {
   margin: 15px 11px 0;
-  font-size: 15px;
-  color: color($color-grey, '700');
+  font-size: 20px;
+  color: $primary-font-color;
 }
 
 
@@ -109,3 +127,24 @@ a {
     display: block;
   }
 }
+
+md-toolbar img {
+  margin-right: 16px;
+  width: 50px;
+}
+
+md-toolbar .logo {
+  font-family: 'Space Mono', monospace;
+  display: inline-block;
+}
+
+md-toolbar.md-tall {
+  min-height: initial;
+  min-width: initial;
+}
+
+// .liquid-container > md-card {
+//   md-card-header, md-card-content, md-card-title {
+//     visibility: hidden;
+//   }
+// }

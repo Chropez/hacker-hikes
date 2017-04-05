@@ -1,9 +1,9 @@
-{{#paper-toolbar tall=tall class="md-whiteframe-5dp"}}
+{{#hh-paper-toolbar tall=tall class="paper-toolbar__main md-whiteframe-5dp"}}
   {{yield}}
   {{#if showLogo}}
     <div class="layout-row layout-align-center-center flex">
-      <img src="/images/icons/android-chrome-192x192.png" alt="">
+      <img data-toolbar-logo="image" src="/images/icons/android-chrome-192x192.png" alt="" class="animated-content">
       <h2 class="logo">hacker-hikes</h2>
     </div>
   {{/if}}
-{{/paper-toolbar}}
+{{/hh-paper-toolbar}}
